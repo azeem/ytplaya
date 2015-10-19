@@ -25,9 +25,9 @@ function renderIndex(rootRender, initState) {
 
 app.use((req, res) => {
 	const store = applyMiddleware(thunkMiddleware)(createStore)(ytPlayaReducer, {
-		currentArtist: Config.artistList[1]
+		currentArtist: Config.artistList[Config.defaultArtist]
 	});
-	store.dispatch(loadPlaylist(Config.artistList[1], Config.apiKey))
+	store.dispatch(loadPlaylist(Config.artistList[Config.defaultArtist], Config.apiKey))
 	.then(val => {
 		const rootRender = renderToString(
 			<Provider store={store}>

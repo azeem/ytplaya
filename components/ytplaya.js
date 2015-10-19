@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { loadPlaylist, artistChange } from "../actions"
 import PlayListItem from "./playlistitem"
 import styles from "./ytplaya.css"
+import * as Config from "../config"
 
 class YTPlaya extends Component {
 	render() {
@@ -20,13 +21,14 @@ class YTPlaya extends Component {
 			});
 		}
 
+		const selectValue = this.props.currentArtist || this.props.artists[Config.defaultArtist];
 		return (
 			<div>
 				<div className={styles.playlist}>
 					<div className={styles.topRow}>
 						<label>
 							Artist
-							<select ref="artistSelect" onChange={e => this.handleArtistChange(e)} value={this.props.currentArtist || this.props.artists[0]}>
+							<select ref="artistSelect" onChange={e => this.handleArtistChange(e)} value={selectValue}>
 								{ this.props.artists.map(item => <option key={item} value={item}>{item}</option>) }
 							</select>
 						</label>
