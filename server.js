@@ -17,6 +17,10 @@ const app = Express();
 app.use(morgan("combined"));
 app.use("/static", Express.static("dist"));
 
+/**
+ * renders the index.html file with root rendering
+ * and initial state JSON.
+ */
 function renderIndex(rootRender, initState) {
 	const indexFile = fs.readFileSync("index.html", "utf8");
 	const initStateVar = "window.__INIT_STATE__=" + JSON.stringify(initState) + ";";
@@ -41,11 +45,12 @@ app.use((req, res) => {
 	});
 });
 
-app.listen(1337, "0.0.0.0", function(err) {
+const port = 1337;
+const host = "0.0.0.0";
+app.listen(port, host, function(err) {
 	if(err) {
 		console.log(err);
 	} else {
-		console.log("Listening at 0.0.0.0: 1337");
+		console.log("Listening at "+host+":"+port);
 	}
 });
-

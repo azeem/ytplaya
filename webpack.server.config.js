@@ -1,8 +1,12 @@
+//
+// Webpack config for React Components on the Server Side
+//
+
+require("es6-promise").polyfill();
 var webpack = require("webpack"),
     fs = require("fs"),
-    path = require("path");
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-require("es6-promise").polyfill();
+    path = require("path"),
+    ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: "./components/ytplaya.js",
@@ -15,6 +19,7 @@ module.exports = {
   },
 
   plugins: [
+    // TODO: avoid redundant generation of style.css
     new ExtractTextPlugin('style.css', { allChunks: true })
   ],
 

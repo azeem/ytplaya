@@ -6,6 +6,11 @@ export const LOAD_PLAYLIST_START = "LOAD_PLAYLIST_START";
 export const LOAD_PLAYLIST_END = "LOAD_PLAYLIST_END";
 export const ARTIST_CHANGE = "ARTIST_CHANGE";
 
+/**
+ * Create Artist Change action
+ * @param {string} artist new current artist
+ * @returns {object} action
+ */
 export function artistChange(artist) {
 	return {
 		type: ARTIST_CHANGE,
@@ -13,14 +18,26 @@ export function artistChange(artist) {
 	}
 }
 
-export function loadPlaylistStart(artist) {
+/**
+ * Create Playlist loading start action
+ * @param {string} artist artist being loaded
+ * @returns {object} action
+ */
+function loadPlaylistStart(artist) {
 	return {
 		type: LOAD_PLAYLIST_START,
 		artist
 	}
 }
 
-export function loadPlaylistEnd(artist, success, items) {
+/**
+ * Create Playlist loading end action
+ * @param {string} artist artist being loaded
+ * @param {boolean} success true if the load succeeded
+ * @param {array} items list of videos retrieved from youtube
+ * @returns {object} action
+ */
+function loadPlaylistEnd(artist, success, items) {
 	return {
 		type: LOAD_PLAYLIST_END,
 		success,
@@ -29,6 +46,12 @@ export function loadPlaylistEnd(artist, success, items) {
 	}
 }
 
+/**
+ * Creates async actions that loads a playlist
+ * @param {string} artist artist to be loaded
+ * @param {string} apiKey apiKey to be sent to youtube api
+ * @returns {object} promise that resolve to a boolean indicating load success
+ */
 export function loadPlaylist(artist, apiKey) {
 	return (dispatch, getState) => {
 

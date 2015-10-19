@@ -1,6 +1,11 @@
 import styles from "./playlistitem.css"
 import React, { Component, PropTypes } from "react"
 
+/**
+ * Youtube Playlist Item Component.
+ * This component displays thumbnail, title and channel
+ * details for a playlist item
+ */
 export default class PlayListItem extends Component {
 	render() {
 		return (

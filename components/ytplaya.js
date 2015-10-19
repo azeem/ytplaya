@@ -5,6 +5,12 @@ import PlayListItem from "./playlistitem"
 import styles from "./ytplaya.css"
 import * as Config from "../config"
 
+/**
+ * Youtube Playlist Component.
+ * This component renders a simple playlist of 
+ * finite set of videos retrieved from youtube search API.
+ * A dropdown lets user change artist.
+ */
 class YTPlaya extends Component {
 	render() {
 		const { dispatch, currentArtist } = this.props;

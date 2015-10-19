@@ -1,4 +1,4 @@
-// This bootstrap the server. 
+// This bootstraps the server. 
 // First we register babel require hook and then simply import
 // the server module
 require("babel/register");

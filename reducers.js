@@ -2,6 +2,9 @@ import { combineReducers } from "redux";
 import * as Actions from "./actions";
 
 
+/**
+ * isLoading state that indicates if an item is being loaded
+ */
 function isLoading(state = false, action) {
 	switch(action.type) {
 		case Actions.LOAD_PLAYLIST_START:
@@ -13,6 +16,9 @@ function isLoading(state = false, action) {
 	}
 }
 
+/**
+ * playLists state that stores all available playlist data
+ */
 function playLists(state = {}, action) {
 	switch(action.type) {
 		case Actions.LOAD_PLAYLIST_END:
@@ -24,6 +30,9 @@ function playLists(state = {}, action) {
 	}
 }
 
+/**
+ * currentArtist state that stores the currently selected artist
+ */
 function currentArtist(state = null, action) {
 	switch(action.type) {
 		case Actions.ARTIST_CHANGE:
@@ -33,6 +42,10 @@ function currentArtist(state = null, action) {
 	}
 }
 
+
+/**
+ * root reducer for the app
+ */
 const ytPlaya = combineReducers({
 	currentArtist,
 	isLoading,
