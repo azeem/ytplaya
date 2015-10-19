@@ -9,7 +9,7 @@ commands install's webpack cli.
 
 	npm install webpack -g
 
-Install and dependencies with the following command
+Install dependencies with the following command
 
 	npm install
 
@@ -25,7 +25,7 @@ This starts a server at `0.0.0.0:1337`.
 
 # Design
 
-+ The app is built using the Redux container library. Redux is predictable, extremely simple and efficient. Redux
++ The app is built using the Redux container library. Redux is an extremely simple, predictable and efficient. Redux
   also works well on node, making it easy to reuse code between server and client side.
 + Webpack is used for bundling the application. This allows cleaner build pipline, modularization and asset handling.
 + Styles are modularized using CSS-Modules. This makes styles local to components and easily composable.
