@@ -1,0 +1,35 @@
+.normal {
+	height: 68px;
+	margin: 0px 0px 10px 0px;
+	padding: 2px;
+	cursor: pointer;
+}
+
+.normal .title {
+	color: #333333;
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 3px;
+	line-height: 1em;
+	max-height: 2em;
+	overflow: hidden;
+}
+.normal:hover .title {
+	color: #167AC6;
+}
+
+.normal .thumb {
+	float: left;
+	height: 68px;
+	overflow: hidden;
+	position: relative;
+	margin-right: 7px;
+}
+.normal .thumb img {
+	position: relative;
+	top: -11px;
+}
+
+.normal .channel {
+	color: #767676;
+}

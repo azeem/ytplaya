@@ -1,0 +1,38 @@
+{
+  "name": "ytplaya",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack && webpack --config webpack.server.config.js",
+    "start": "node serverboot.js",
+    "clean": "rm -r dist"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "babel-runtime": "^5.8.25",
+    "css-loader": "^0.20.1",
+    "es6-promise": "^3.0.2",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "null-loader": "^0.1.1",
+    "postcss-loader": "^0.6.0",
+    "style-loader": "^0.12.4",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.0"
+  },
+  "dependencies": {
+    "babel": "^5.8.23",
+    "express": "^4.13.3",
+    "isomorphic-fetch": "^2.1.1",
+    "lodash": "^3.10.1",
+    "morgan": "^1.6.1",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-redux": "^4.0.0",
+    "redux": "^3.0.2",
+    "redux-thunk": "^1.0.0"
+  }
+}
